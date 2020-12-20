@@ -8,7 +8,7 @@
 
 1. 安装依赖
 2. 在根目录执行想要运行的测试文件
-   如：`jest ./stack/__test__/index.spec.js`
+   如：`jest ./src/stack/__test__/index.spec.js`
 
 ---
 
