@@ -1,0 +1,8 @@
+{
+  "name": "algorithm_practice",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/WeCheung/algorithm_practice.git",
+  "author": "harold <1003306162@qq.com>",
+  "license": "MIT"
+}
