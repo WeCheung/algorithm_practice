@@ -16,23 +16,23 @@ export default class Stack {
 		this.items.push(item)
 	}
 
-	pop = () => {
+	pop = (): any => {
 		return this.items.pop()
 	}
 
-	top = () => {
+	top = (): any => {
 		return this.items[this.items.length - 1]
 	}
 
-	isEmpty = () => {
+	isEmpty = (): any => {
 		return !this.items.length
 	}
 
-	size = () => {
+	size = (): number => {
 		return this.items.length
 	}
 
-	clear = () => {
+	clear = (): void => {
 		this.items = []
 	}
 }

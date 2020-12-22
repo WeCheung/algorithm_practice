@@ -1,0 +1,26 @@
+{
+  "include": ["src/**/*", "tools/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts"],
+  "compilerOptions": {
+    /* Basic Options */
+    "lib": ["ES2015"],
+    "target": "ES2015",                          /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019', 'ES2020', or 'ESNEXT'. */
+    "module": "CommonJS",                     /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', 'es2020', or 'ESNext'. */
+    "allowJs": true,                       /* Allow javascript files to be compiled. */
+    "checkJs": true,                       /* Report errors in .js files. */
+    /* Strict Type-Checking Options */
+    "strict": true,                           /* Enable all strict type-checking options. */
+    "noImplicitAny": true,                 /* Raise error on expressions and declarations with an implied 'any' type. */
+    "noImplicitThis": true,                /* Raise error on 'this' expressions with an implied 'any' type. */
+
+    /* Additional Checks */
+    "noUnusedLocals": true,                /* Report errors on unused locals. */
+    "noUnusedParameters": true,            /* Report errors on unused parameters. */
+
+    /* Module Resolution Options */
+    "moduleResolution": "node",            /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */
+    "esModuleInterop": false,                  /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */
+    "skipLibCheck": false,                     /* Skip type checking of declaration files. */
+    "forceConsistentCasingInFileNames": false  /* Disallow inconsistently-cased references to the same file. */
+  }
+}

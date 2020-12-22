@@ -8,6 +8,8 @@
  *  输入：['(', '1', '+', '(' + '4', '+', '5', '+', '3', ')', '-', '3', ')', '+', '(', '9', '+', '8', ')']
  *  输出：['1', '4', '5', '+', '3', '+', '+', '3', '-', '9', '8', '+', '+']
  *
+ * 	(1+2)-(3+4*5)
+ *
  *  (1 + (4 + 5 + 3) / 4 - 3) + (6 + 8) * 3
  *  输出：['1', '4', '5', '+', '3', '+', '4', '/', '+', '3', '-', '6', '8', '+', '3', '*', '+']
 **/
@@ -35,6 +37,7 @@ export default function infixExp2PostfixExp(expression: string[]) {
 		'*': 2,
 		'/': 2,
 	}
+	type operators = keyof typeof operatorPriority
 	let c: string
 
 	for (let i = 0; i < expression.length; i++) {
@@ -57,7 +60,7 @@ export default function infixExp2PostfixExp(expression: string[]) {
 				!stack.isEmpty() &&
 				operators.indexOf(stack.top()) !== -1 &&
 				// 优先级比较高的运算符有限运算，所以较前推入数组
-				operatorPriority[stack.top()] >= operatorPriority[c]
+				operatorPriority[stack.top() as operators] >= operatorPriority[c as operators]
 			) {
 				// 把弹出的运算符加入到 postfixList 中
 				postfixList.push(stack.pop())

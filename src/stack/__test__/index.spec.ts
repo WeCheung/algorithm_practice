@@ -23,14 +23,20 @@ test('ex02', () => {
 })
 
 test('ex03', () => {
-	const arr1 = '["12","3","+"]'
-	const arr2 = '["1","4","5","+","3","+","+","3","-","9","8","+","+"]'
+	const temp1: string[] = infixExp2PostfixExp(['12', '+', '3'])
+	const temp2: string[] = infixExp2PostfixExp(['(', '1', '+', '2', ')'])
+	const temp3: string[] = infixExp2PostfixExp(['(', '1', '+', '2', '*', '3', ')', '+', '4'])
+	let ans1 = ''
+	let ans2 = ''
+	let ans3 = ''
 
-	const ans1 = JSON.stringify(infixExp2PostfixExp(['12', '+', '3']))
-	const ans2 = JSON.stringify(infixExp2PostfixExp(['(', '1', '+', '(' + '4', '+', '5', '+', '3', ')', '-', '3', ')', '+', '(', '9', '+', '8', ')']))
-
-	expect(ans1).toBe(arr1)
-	expect(ans2).toBe(arr2)
+	temp1.forEach(c => ans1 += c)
+	temp2.forEach(c => ans2 += c)
+	temp3.forEach(c => ans3 += c)
+	
+	expect(ans1).toBe('123+')
+	expect(ans2).toBe('12+')
+	expect(ans3).toBe('123*+4+')
 })
 
 test('ex04', () => {

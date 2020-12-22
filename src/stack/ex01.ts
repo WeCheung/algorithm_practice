@@ -20,6 +20,7 @@ import Stack from './stack'
 
 export default function is_legal_brackets(str: string): boolean {
 	const stack = new Stack()
+	// ##BEGIN##
 	let c: string
 	for (let i = 0; i < str.length; i++) {
 		c = str[i]
@@ -34,4 +35,5 @@ export default function is_legal_brackets(str: string): boolean {
 		}
 	}
 	return stack.isEmpty()
+	// ##END##
 }
