@@ -2,6 +2,7 @@ import is_legal_brackets from '../ex01'
 import calc_exp from '../ex02'
 import infixExp2PostfixExp from '../ex03'
 import MinStack from '../ex04'
+import {expect, test} from '@jest/globals';
 
 test('ex01', () => {
 	expect(is_legal_brackets('sdf(sd(sdf(sdf(sdf))sdf))')).toBe(true)
@@ -26,29 +27,7 @@ test('ex03', () => {
 	const arr2 = '["1","4","5","+","3","+","+","3","-","9","8","+","+"]'
 
 	const ans1 = JSON.stringify(infixExp2PostfixExp(['12', '+', '3']))
-	const ans2 = JSON.stringify(
-		infixExp2PostfixExp([
-			'(',
-			'1',
-			'+',
-			'(',
-			'4',
-			'+',
-			'5',
-			'+',
-			'3',
-			')',
-			'-',
-			'3',
-			')',
-			'+',
-			'(',
-			'9',
-			'+',
-			'8',
-			')',
-		])
-	)
+	const ans2 = JSON.stringify(infixExp2PostfixExp(['(', '1', '+', '(' + '4', '+', '5', '+', '3', ')', '-', '3', ')', '+', '(', '9', '+', '8', ')']))
 
 	expect(ans1).toBe(arr1)
 	expect(ans2).toBe(arr2)
