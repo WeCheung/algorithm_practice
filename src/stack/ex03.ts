@@ -8,8 +8,6 @@
  *  输入：['(', '1', '+', '(' + '4', '+', '5', '+', '3', ')', '-', '3', ')', '+', '(', '9', '+', '8', ')']
  *  输出：['1', '4', '5', '+', '3', '+', '+', '3', '-', '9', '8', '+', '+']
  *
- * 	(1+2)-(3+4*5)
- *
  *  (1 + (4 + 5 + 3) / 4 - 3) + (6 + 8) * 3
  *  输出：['1', '4', '5', '+', '3', '+', '4', '/', '+', '3', '-', '6', '8', '+', '3', '*', '+']
 **/
@@ -30,49 +28,51 @@ import Stack from './stack'
 export default function infixExp2PostfixExp(expression: string[]) {
 	const stack = new Stack()
 	const postfixList: string[] = []
-	const operators = ['+', '-', '*', '/']
-	const operatorPriority = {
-		'+': 1,
-		'-': 1,
-		'*': 2,
-		'/': 2,
-	}
-	type operators = keyof typeof operatorPriority
-	let c: string
+	// ##BEGIN## 代码已加密
+HHAHjlHj0HjNHj6HjEHHmHj0HjhHjDHj/HjYHjEHj0Hj/Hj6HHmHjjHHmHjOHHlHHMHHlHH1HHmHHlHHTHHlHH1HHmHHlHHXHHlHH1HHmHHlHHqHHlHjG
+HHAHjlHj0HjNHj6HjEHHmHj0HjhHjDHj/HjYHjEHj0Hj/HjaHj/HjTHj0Hj/HjTHjEHgjHHmHjjHHmHgI
+HHAHHAHHlHHMHHlHH7HHmHHZHH1
+HHAHHAHHlHHTHHlHH7HHmHHZHH1
+HHAHHAHHlHHXHHlHH7HHmHHNHH1
+HHAHHAHHlHHqHHlHH7HHmHHNHH1
+HHAHgS
+HHAHjEHgjHjhHjDHHmHj0HjhHjDHj/HjYHjEHj0Hj/Hj6HHmHjjHHmHjqHjDHgjHj0HjXHHmHjEHgjHjhHjDHj0HjXHHmHj0HjhHjDHj/HjYHjEHj0Hj/HjaHj/HjTHj0Hj/HjTHjEHgj
+HHAHjLHjDHjEHHmHjlHH7HHmHj6HjEHj/HjTHjNHjM
 
-	for (let i = 0; i < expression.length; i++) {
-		c = expression[i]
-		// 如果是数字
-		if (!isNaN(Number(c))) {
-			postfixList.push(c)
-		} else if (c === '(') {
-			stack.push(c)
-		} else if (c === ')') {
-			// 遇到右括号就把栈顶元素弹出，直到遇到左括号
-			while (stack.top() !== '(') {
-				postfixList.push(stack.pop())
-			}
-			stack.pop() // 左括号出栈
-		} else {
-			// 运算符
-			// 如果遇到运算符，则把栈顶的运算符弹出，直到栈顶的运算符优先级小于当前运算符
-			while (
-				!stack.isEmpty() &&
-				operators.indexOf(stack.top()) !== -1 &&
-				// 优先级比较高的运算符有限运算，所以较前推入数组
-				operatorPriority[stack.top() as operators] >= operatorPriority[c as operators]
-			) {
-				// 把弹出的运算符加入到 postfixList 中
-				postfixList.push(stack.pop())
-			}
-			// 当前的运算符入栈
-			stack.push(c)
-		}
-	}
+HHAHjXHj0Hj/HHmHH5HjLHjDHjEHHmHjTHHmHjjHHmHHLHHUHHmHjTHHmHjHHHmHjDHgHHjhHj/HjDHj6Hj6HjTHj0HjNHHeHjLHjDHjNHjMHjEHj1HHUHHmHjTHHMHHMHHDHHmHgI
+HHAHHAHjlHHmHjjHHmHjDHgHHjhHj/HjDHj6Hj6HjTHj0HjNHjOHjTHjG
+HHAHHAHHqHHqHHmd2/BwyBxUBVLdzM
+HHAHHAHjTHjXHHmHH5HHGHjTHj6HjQHjYHjQHH5HjQHj+HjZHjnHjDHj/HH5HjlHHDHHDHHDHHmHgI
+HHAHHAHHAHjhHj0Hj6HjEHjXHjTHgHHjiHjTHj6HjEHHeHjhHj+Hj6Hj1HH5HjlHHD
+HHAHHAHgSHHmHjDHjLHj6HjDHHmHjTHjXHHmHH5HjlHHmHjjHjjHjjHHmHHlHH5HHlHHDHHmHgI
+HHAHHAHHAHj6HjEHjYHjlHjqHHeHjhHj+Hj6Hj1HH5HjlHHD
+HHAHHAHgSHHmHjDHjLHj6HjDHHmHjTHjXHHmHH5HjlHHmHjjHjjHjjHHmHHlHHDHHlHHDHHmHgI
+HHAHHAHHAHHqHHqHHmWxrSN5S7vBgyS7xdG2BHtBRhWNoSeM4phdeJSZeQ4V4CmSN5WxrSN5d5nBgyS7x
+HHAHHAHHAHjUHj1HjTHjLHjDHHmHH5Hj6HjEHjYHjlHjqHHeHjEHj0HjhHH5HHDHHmHHGHjjHjjHHmHHlHH5HHlHHDHHmHgI
+HHAHHAHHAHHAHjhHj0Hj6HjEHjXHjTHgHHjiHjTHj6HjEHHeHjhHj+Hj6Hj1HH5Hj6HjEHjYHjlHjqHHeHjhHj0HjhHH5HHDHHD
+HHAHHAHHAHgS
+HHAHHAHHAHj6HjEHjYHjlHjqHHeHjhHj0HjhHH5HHDHHmHHqHHqHHmd5nBgyS7xSZeBRh
+HHAHHAHgSHHmHjDHjLHj6HjDHHmHgI
+HHAHHAHHAHHqHHqHHmWbu4q=4Tt
+HHAHHAHHAHHqHHqHHmd2/BwyWxrSN5Wbu4q=4TtQ4VSNJBHtBRhWNo4f5Wbu4q=4TtdeJSZeQ4V4CmSN5BRhWNo4f5Wbu4q=4TtSYcSeLAHRdmqSrWdeMS0AWbu4q=4Tt
+HHAHHAHHAHjUHj1HjTHjLHjDHHmHH5
+HHAHHAHHAHHAHHGHj6HjEHjYHjlHjqHHeHjTHj6HjAHjZHjhHjEHgjHH5HHDHHmHHnHHn
+HHAHHAHHAHHAHj0HjhHjDHj/HjYHjEHj0Hj/Hj6HHeHjTHjNHj5HjDHgHHj=HjXHH5Hj6HjEHjYHjlHjqHHeHjEHj0HjhHH5HHDHHDHHmHHGHjjHjjHHmHHTHHZHHmHHnHHn
+HHAHHAHHAHHAHHqHHqHHmSYcSeLAHRB5yWV=vH54f5Wbu4q=4TtB=YWDaWbu4q=Q4VdUVSuYWV=S0ABSVSqJBVLAHh
+HHAHHAHHAHHAHj0HjhHjDHj/HjYHjEHj0Hj/HjaHj/HjTHj0Hj/HjTHjEHgjHjOHj6HjEHjYHjlHjqHHeHjEHj0HjhHH5HHDHHmHjYHj6HHmHj0HjhHjDHj/HjYHjEHj0Hj/Hj6HjGHHmHjgHjjHHmHj0HjhHjDHj/HjYHjEHj0Hj/HjaHj/HjTHj0Hj/HjTHjEHgjHjOHjlHHmHjYHj6HHmHj0HjhHjDHj/HjYHjEHj0Hj/Hj6HjG
+HHAHHAHHAHHDHHmHgI
+HHAHHAHHAHHAHHqHHqHHmBHtdeJSZe4f5Wbu4q=4TtShmSqJSN5HHmHjhHj0Hj6HjEHjXHjTHgHHjiHjTHj6HjEHHmSGG
+HHAHHAHHAHHAHjhHj0Hj6HjEHjXHjTHgHHjiHjTHj6HjEHHeHjhHj+Hj6Hj1HH5Hj6HjEHjYHjlHjqHHeHjhHj0HjhHH5HHDHHD
+HHAHHAHHAHgS
+HHAHHAHHAHHqHHqHHmdeMS0A4f5Wbu4q=4TtSqJBRh
+HHAHHAHHAHj6HjEHjYHjlHjqHHeHjhHj+Hj6Hj1HH5HjlHHD
+HHAHHAHgS
+HHAHgS
 
-	// for 循环结束后栈里可能还有元素，都弹出放入到 postfixList 中
-	while (!stack.isEmpty()) {
-		postfixList.push(stack.pop())
-	}
+HHAHHqHHqHHmHjXHj0Hj/HHmdLW4brAjBB2IS7nBRhWwyS7BAW2Wb1B=YSeM4phQ4VWQYdeJSZeBv7SqJSN5HHmHjhHj0Hj6HjEHjXHjTHgHHjiHjTHj6HjEHHmSGG
+HHAHjUHj1HjTHjLHjDHHmHH5HHGHj6HjEHjYHjlHjqHHeHjTHj6HjAHjZHjhHjEHgjHH5HHDHHDHHmHgI
+HHAHHAHjhHj0Hj6HjEHjXHjTHgHHjiHjTHj6HjEHHeHjhHj+Hj6Hj1HH5Hj6HjEHjYHjlHjqHHeHjhHj0HjhHH5HHDHHD
+HHAHgS
+	// ##END##
 	return postfixList
 }

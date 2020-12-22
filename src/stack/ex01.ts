@@ -20,20 +20,20 @@ import Stack from './stack'
 
 export default function is_legal_brackets(str: string): boolean {
 	const stack = new Stack()
-	// ##BEGIN##
-	let c: string
-	for (let i = 0; i < str.length; i++) {
-		c = str[i]
-		if (c === '(') {
-			stack.push(c)
-		} else if (c === ')') {
-			if (stack.isEmpty()) {
-				return false
-			} else {
-				stack.pop()
-			}
-		}
-	}
-	return stack.isEmpty()
+	// ##BEGIN## 代码已加密
+HHAHjLHjDHjEHHmHjlHH7HHmHj6HjEHj/HjTHjNHjM
+HHAHjXHj0Hj/HHmHH5HjLHjDHjEHHmHjTHHmHjjHHmHHLHHUHHmHjTHHmHjHHHmHj6HjEHj/HHeHjLHjDHjNHjMHjEHj1HHUHHmHjTHHMHHMHHDHHmHgI
+HHAHHAHjlHHmHjjHHmHj6HjEHj/HjOHjTHjG
+HHAHHAHjTHjXHHmHH5HjlHHmHjjHjjHjjHHmHHlHH5HHlHHDHHmHgI
+HHAHHAHHAHj6HjEHjYHjlHjqHHeHjhHj+Hj6Hj1HH5HjlHHD
+HHAHHAHgSHHmHjDHjLHj6HjDHHmHjTHjXHHmHH5HjlHHmHjjHjjHjjHHmHHlHHDHHlHHDHHmHgI
+HHAHHAHHAHjTHjXHHmHH5Hj6HjEHjYHjlHjqHHeHjTHj6HjAHjZHjhHjEHgjHH5HHDHHDHHmHgI
+HHAHHAHHAHHAHj/HjDHjEHj+Hj/HjNHHmHjXHjYHjLHj6HjD
+HHAHHAHHAHgSHHmHjDHjLHj6HjDHHmHgI
+HHAHHAHHAHHAHj6HjEHjYHjlHjqHHeHjhHj0HjhHH5HHD
+HHAHHAHHAHgS
+HHAHHAHgS
+HHAHgS
+HHAHj/HjDHjEHj+Hj/HjNHHmHj6HjEHjYHjlHjqHHeHjTHj6HjAHjZHjhHjEHgjHH5HHD
 	// ##END##
 }

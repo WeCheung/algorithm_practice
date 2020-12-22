@@ -6,13 +6,13 @@ const MAX_CHAR_COUNT = 64
  * 字符串去重
  * @param {*} str
  */
-const distinct = (str: string) => str.split('').reduce((pre, c) => pre.indexOf(c) !== -1 ? pre : pre += c, '')
+const distinct = (str) => str.split('').reduce((pre, c) => pre.indexOf(c) !== -1 ? pre : pre += c, '')
 /**
  * 衍生摘要密码，可通过源密码计算
  * @param {*} key 源密码
  * @param {*} minLen 摘要密码长度
  */
-const generatorPassKey = (key: string, minLen: number) => {
+const generatorPassKey = (key, minLen) => {
   let midStr = key
   let rest = ''
   while (true) {
@@ -31,12 +31,12 @@ const generatorPassKey = (key: string, minLen: number) => {
  * 1. 源密码（可以重复字符）通过md5提取不重复的可见字符(base64)作摘要密码
  * 2. 加密过程加入源密码生成的盐值，增加推导难度
  */
-module.exports.createEncrypt = (key: string) => {
+module.exports.createEncrypt = key => {
   const len = key.length // 源密码长度
   const salt = key.split('').map(x => x.charCodeAt(0)).reduce((pre, c) => pre += c, 0) % len // 根据源密码生成盐值
   key = generatorPassKey(key, len * 2 > MAX_CHAR_COUNT ? MAX_CHAR_COUNT : len * 2) // 生成摘要密码，源密码两倍长度 or 64位
   return {
-    encode: (str: string) => {
+    encode: str => {
       //加密字符串
       var l = key.length;  //获取密钥的长度
       var a = key.split("");  //把密钥字符串转换为字符数组
@@ -53,7 +53,7 @@ module.exports.createEncrypt = (key: string) => {
       return s;  //返回这些映射的字符
     },
     
-    decode: (str: string) => {
+    decode: str => {
       var l = key.length;  //获取密钥的长度
       var b, b1, b2, b3, d = 0, s;  //定义临时变量
       s = new Array(Math.floor(str.length / 3));  //计算加密字符串包含的字符数，并定义数组

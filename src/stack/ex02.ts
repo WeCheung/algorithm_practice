@@ -6,8 +6,6 @@
  *  等价于 ((10 * (6 / ((9 + 3) * (-11)))) + 17) + 5
  */
 
-import Stack from './stack'
-
 /**
  *  思路分析：
  *
@@ -18,25 +16,28 @@ import Stack from './stack'
  *    遍历结束后，栈里理应只有一个元素，这个元素就是整个表达式的计算结果
  *    否则，代表输入表达式有误
  */
+import Stack from './stack'
 
 export default function calc_exp(expression: string[]) {
 	const stack = new Stack()
-	const operators = ['+', '-', '*', '/']
-	let num1: string, num2: string
+	// ##BEGIN## 代码已加密
+HHAHjlHj0HjNHj6HjEHHmHj0HjhHjDHj/HjYHjEHj0Hj/Hj6HHmHjjHHmHjOHHlHHMHHlHH1HHmHHlHHTHHlHH1HHmHHlHHXHHlHH1HHmHHlHHqHHlHjG
+HHAHjLHjDHjEHHmHjNHj+HjZHHZHH7HHmHj6HjEHj/HjTHjNHjMHH1HHmHjNHj+HjZHHNHH7HHmHj6HjEHj/HjTHjNHjM
 
-	for (let i = 0; i < expression.length; i++) {
-		if (operators.indexOf(expression[i]) !== -1) {
-			num1 = stack.pop()
-			num2 = stack.pop()
-			stack.push(eval(num2 + expression[i] + num1))
-		} else {
-			stack.push(expression[i])
-		}
-	}
+HHAHjXHj0Hj/HHmHH5HjLHjDHjEHHmHjTHHmHjjHHmHHLHHUHHmHjTHHmHjHHHmHjDHgHHjhHj/HjDHj6Hj6HjTHj0HjNHHeHjLHjDHjNHjMHjEHj1HHUHHmHjTHHMHHMHHDHHmHgI
+HHAHHAHjTHjXHHmHH5Hj0HjhHjDHj/HjYHjEHj0Hj/Hj6HHeHjTHjNHj5HjDHgHHj=HjXHH5HjDHgHHjhHj/HjDHj6Hj6HjTHj0HjNHjOHjTHjGHHDHHmHHGHjjHjjHHmHHTHHZHHDHHmHgI
+HHAHHAHHAHjNHj+HjZHHZHHmHjjHHmHj6HjEHjYHjlHjqHHeHjhHj0HjhHH5HHD
+HHAHHAHHAHjNHj+HjZHHNHHmHjjHHmHj6HjEHjYHjlHjqHHeHjhHj0HjhHH5HHD
+HHAHHAHHAHj6HjEHjYHjlHjqHHeHjhHj+Hj6Hj1HH5HjDHj7HjYHjLHH5HjNHj+HjZHHNHHmHHMHHmHjDHgHHjhHj/HjDHj6Hj6HjTHj0HjNHjOHjTHjGHHmHHMHHmHjNHj+HjZHHZHHDHHD
+HHAHHAHgSHHmHjDHjLHj6HjDHHmHgI
+HHAHHAHHAHj6HjEHjYHjlHjqHHeHjhHj+Hj6Hj1HH5HjDHgHHjhHj/HjDHj6Hj6HjTHj0HjNHjOHjTHjGHHD
+HHAHHAHgS
+HHAHgS
 
-	if (stack.size() === 1) {
-		return stack.top()
-	} else {
-		return false
-	}
+HHAHjTHjXHHmHH5Hj6HjEHjYHjlHjqHHeHj6HjTHggHjDHH5HHDHHmHjjHjjHjjHHmHHZHHDHHmHgI
+HHAHHAHj/HjDHjEHj+Hj/HjNHHmHj6HjEHjYHjlHjqHHeHjEHj0HjhHH5HHD
+HHAHgSHHmHjDHjLHj6HjDHHmHgI
+HHAHHAHj/HjDHjEHj+Hj/HjNHHmHjXHjYHjLHj6HjD
+HHAHgS
+	// ##END##
 }

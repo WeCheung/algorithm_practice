@@ -1,6 +1,6 @@
 {
-  "include": ["src/**/*", "tools/**/*"],
-  "exclude": ["node_modules", "**/*.spec.ts"],
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts", "tools/**/*"],
   "compilerOptions": {
     /* Basic Options */
     "lib": ["ES2015"],

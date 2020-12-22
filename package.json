@@ -9,7 +9,7 @@
     "test": "jest",
     "watch": "jest --watchAll",
     "coverage": "jest --coverage",
-    "encrypt": "node ./tools/index.ts"
+    "encrypt": "node ./tools/index.js"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",

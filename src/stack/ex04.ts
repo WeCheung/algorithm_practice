@@ -14,23 +14,25 @@ import Stack from './stack'
 export default class MinStack {
 	private data_stack = new Stack()
 	private min_stack = new Stack()
+	
+	// ##BEGIN## 代码已加密
+HHAHjhHj+Hj6Hj1HHmHjjHHmHH5HjTHjEHjDHjZHH7HHmHjNHj+HjZHjnHjDHj/HHDHHmHjjHjgHHmHgI
+HHAHHAHjEHj1HjTHj6HHeHj5HjYHjEHjYHjrHj6HjEHjYHjlHjqHHeHjhHj+Hj6Hj1HH5HjTHjEHjDHjZHHD
 
-	push = (item: number) => {
-		this.data_stack.push(item)
+HHAHHAHjTHjXHHmHH5HjEHj1HjTHj6HHeHjZHjTHjNHjrHj6HjEHjYHjlHjqHHeHjTHj6HjAHjZHjhHjEHgjHH5HHDHHmHgyHgyHHmHjTHjEHjDHjZHHmHjHHjjHHmHjEHj1HjTHj6HHeHjZHjTHjNHjrHj6HjEHjYHjlHjqHHeHjEHj0HjhHH5HHDHHDHHmHgI
+HHAHHAHHAHjEHj1HjTHj6HHeHjZHjTHjNHjrHj6HjEHjYHjlHjqHHeHjhHj+Hj6Hj1HH5HjTHjEHjDHjZHHD
+HHAHHAHgS
+HHAHgS
 
-		if (this.min_stack.isEmpty() || item <= this.min_stack.top()) {
-			this.min_stack.push(item)
-		}
-	}
+HHAHjhHj0HjhHHmHjjHHmHH5HHDHHmHjjHjgHHmHgI
+HHAHHAHjlHj0HjNHj6HjEHHmHjTHjEHjDHjZHHmHjjHHmHjEHj1HjTHj6HHeHj5HjYHjEHjYHjrHj6HjEHjYHjlHjqHHeHjhHj0HjhHH5HHD
+HHAHHAHjTHjXHHmHH5HjTHjEHjDHjZHHmHjHHjjHHmHjEHj1HjTHj6HHeHjZHjTHjNHjrHj6HjEHjYHjlHjqHHeHjEHj0HjhHH5HHDHHDHHmHgI
+HHAHHAHHAHjEHj1HjTHj6HHeHjZHjTHjNHjrHj6HjEHjYHjlHjqHHeHjhHj0HjhHH5HHD
+HHAHHAHgS
+HHAHgS
 
-	pop = () => {
-		const item = this.data_stack.pop()
-		if (item <= this.min_stack.top()) {
-			this.min_stack.pop()
-		}
-	}
-
-	min = () => {
-		return this.min_stack.top()
-	}
+HHAHjZHjTHjNHHmHjjHHmHH5HHDHHmHjjHjgHHmHgI
+HHAHHAHj/HjDHjEHj+Hj/HjNHHmHjEHj1HjTHj6HHeHjZHjTHjNHjrHj6HjEHjYHjlHjqHHeHjEHj0HjhHH5HHD
+HHAHgS
+	// ##END##
 }

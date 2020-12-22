@@ -1,9 +1,9 @@
 const fs = require('fs');
 const readline = require('readline');
-
-type codeType = {encode: (text: string) => string; decode: (text: string) => string;}
-
-module.exports.transferFile = async ({ encode, decode }: codeType, inputPath: string, outputPath: string, beginFlg: string = '##BEGIN##', endFlg = '##END##', ) => {
+/**
+ *
+ */
+module.exports.transferFile = async ({ encode, decode }, inputPath, outputPath, beginFlg = '##BEGIN##', endFlg = '##END##', ) => {
   const input = fs.createReadStream(inputPath);
   
   const rl = readline.createInterface({
@@ -13,7 +13,7 @@ module.exports.transferFile = async ({ encode, decode }: codeType, inputPath: st
   // 注意：我们使用 crlfDelay 选项将 input.txt 中的所有 CR LF 实例（'\r\n'）识别为单个换行符。
   // let isTransfer = false
   const file = []
-  let transfer = (text: string) => text
+  let transfer = text => text
   for await (const line of rl) {
     const isEncodeFlg = '代码已加密'
     // 判断是否开始
@@ -40,6 +40,3 @@ module.exports.transferFile = async ({ encode, decode }: codeType, inputPath: st
   }
   fs.writeFileSync(outputPath, file.join(''))
 }
-
-// TS Hack
-export {}

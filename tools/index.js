@@ -4,7 +4,7 @@ const dotenv = require('dotenv')
 const { createEncrypt } = require('./encrypt')
 
 const { transferFile } = require('./transfer')
-const scanFolder = path.resolve(__dirname, '../')
+const scanFolder = path.resolve(__dirname, '../src/stack/')
 
 // console.log('process', process.argv)
 // 读取配置参数
@@ -20,13 +20,13 @@ console.log('秘钥为:', )
 const encrypt = createEncrypt(key)
 
 // 循环加密代码
-const list: string[] = fs.readdirSync(scanFolder)
+const list = fs.readdirSync(scanFolder)
 list
   .filter(v => v.indexOf('ex') > -1)
   .forEach(async v => {
     
     // const operation = process.argv[2]
-    const sourcePath = path.resolve(scanFolder, v + '/index.js')
+    const sourcePath = path.resolve(scanFolder, v )
     console.log(`转换代码 file:`, v, sourcePath)
     
     await transferFile(encrypt, sourcePath, sourcePath)
