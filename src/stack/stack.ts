@@ -24,7 +24,7 @@ export default class Stack {
 		return this.items[this.items.length - 1]
 	}
 
-	isEmpty = (): any => {
+	isEmpty = (): boolean => {
 		return !this.items.length
 	}
 
